@@ -293,6 +293,12 @@ margin-left: 10px;
 @media(max-width: 440px){
 :root{
     --big-font: 3.4rem;
+    background: rgba(255, 255, 255, 0.16);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .hero-text h5{
     font-size: 15px;
