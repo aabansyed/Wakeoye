@@ -245,7 +245,7 @@ margin-left: 10px;
         left: 100%;
         display: flex;
         flex-direction: column;
-        backdrop-filter: blur(200px);
+        backdrop-filter: blur(50px);
         transition: all .6s ease-in-out;
     }
     .navlist a{
@@ -293,7 +293,7 @@ margin-left: 10px;
 @media(max-width: 440px){
 :root{
     --big-font: 3.4rem;
-    background: rgba(255, 255, 255, 0.16);
+background: rgba(255, 255, 255, 0.16);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
@@ -309,4 +309,3 @@ width: 360px;
 margin: 0 auto;
 }
 }
-
