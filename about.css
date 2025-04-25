@@ -1,101 +1,181 @@
 body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: #000;
-    color: #D4AF37;
-    overflow-x: hidden;
-  }
-  header {
-    padding: 0;
-    margin: 0;
-  }
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000;
+  color: #FFF;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #111;
+  border-bottom: 1px solid #FFF;
+  flex-wrap: wrap;
+}
+
+.navbar .logo {
+  flex: 1;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.nav-links {
+  flex: 2;
+  text-align: center;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #ae8757;
+}
+
+.icons {
+  flex: 1;
+  text-align: right;
+}
+
+.icons i {
+  color: #fff;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* About Section */
+.about-section {
+  padding: 60px 40px;
+}
+
+.about-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+  padding-right: 20px;
+}
+
+.about-img {
+  flex: 1;
+  max-width: 400px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.about-img.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+/* Horizontal Rule */
+hr {
+  border: none;
+  border-top: 1px solid #ae8757;
+  margin: 40px 0;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  color: #fff;
+  padding: 60px 20px 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.footer-section {
+  margin: 20px;
+}
+
+.footer-section h2 {
+  color: #ae8757;
+}
+
+.footer-section a,
+.footer-section p {
+  color: #fff;
+  opacity: 0.4;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.social-icons a {
+  margin: 0 8px;
+  color: #ae8757;
+  font-size: 18px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: #111;
-    border-bottom: 1px solid #D4AF37;
-    perspective: 1000px;
-  }
-  .navbar h1 {
-    font-size: 3rem;
-    transform: rotateY(10deg);
-    animation: fadeIn 1.5s ease forwards;
-  }
-  .nav-links {
-    display: flex;
-    gap: 30px;
-  }
-  .nav-links a {
-    text-decoration: none;
-    color: #D4AF37;
-    font-size: 1.1rem;
-    transition: color 0.3s, transform 0.3s;
-  }
-  .nav-links a:hover {
-    color: #fff;
-    transform: scale(1.1);
-  }
-  .icons i {
-    margin-left: 20px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: transform 0.3s, color 0.3s;
-  }
-  .icons i:hover {
-    transform: scale(1.2);
-    color: #fff;
-  }
-  main {
-    display: flex;
     flex-direction: column;
-    padding: 40px;
-    gap: 40px;
+    align-items: center;
   }
+
+  .nav-links {
+    margin: 10px 0;
+  }
+
+  .icons {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .about-block {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-text, .about-img {
+    max-width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .icons {
+    text-align: center;
+    margin-top: 10px;
+  }
+
   .about-section {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 30px;
-    transform-style: preserve-3d;
-    animation: fadeSlide 2s ease forwards;
+    padding: 40px 20px;
   }
-  .about-text {
-    max-width: 600px;
-    animation: slideIn 2s ease forwards;
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
   }
-  .about-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  .about-text p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-  .about-img img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
-    transform: rotateY(-10deg);
-    transition: transform 1s;
-  }
-  .about-img img:hover {
-    transform: rotateY(0deg) scale(1.05);
-  }
-  @media(min-width: 768px) {
-    .about-section {
-      flex-direction: row;
-    }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: rotateY(-30deg); }
-    to { opacity: 1; transform: rotateY(0); }
-  }
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateX(-50px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  @keyframes fadeSlide {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
 }
