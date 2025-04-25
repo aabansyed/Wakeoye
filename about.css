@@ -89,6 +89,26 @@ hr {
   border-top: 1px solid #ae8757;
   margin: 40px 0;
 }
+.team-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.team-member {
+  text-align: center;
+  margin: 10px;
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Circle image */
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
 
 /* Footer */
 footer {
