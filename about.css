@@ -70,7 +70,7 @@ body {
 }
 
 .about-img {
-  flex: 1;
+  flex: 10;
   max-width: 400px;
   border-radius: 10px;
   cursor: pointer;
@@ -82,6 +82,52 @@ body {
   transform: scale(0.95);
   pointer-events: none;
 }
+.about-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Important for responsiveness */
+  padding: 20px;
+}
+
+.about-text {
+  flex: 1 1 50%;
+  min-width: 300px;
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  flex: 10 10px 40%;
+  justify-content: flex-end;
+  min-width: 250px;
+}
+
+.client-logo {
+  width: 100px; /* You can adjust */
+  height: auto;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.client-logo:hover {
+  opacity: 0.7;
+}
+
+/* Make logos and text stack on small screens */
+@media (max-width: 768px) {
+  .about-block {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-grid {
+    margin-top: 20px;
+    justify-content: center;
+  }
+}
+
 
 /* Horizontal Rule */
 hr {
