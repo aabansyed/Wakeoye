@@ -3,85 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="shortcut icon" href="images/wake oye favicon.jpg" type="image/x-icon">
+    <title>Contact - Wake Oye</title>
+    
+    <link rel="shortcut icon" href="images/wake oye favicon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="index 2.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-
-    <title>Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="index 2.css">
 </head>
 <body>
     <header>
-        <ul class="navlist">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-             <li><a href="#">Product</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo wake oye .png" alt="Wake Oye Logo">
+            </a>
+            <ul class="navlist">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Vending Machine</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </header>
- 
+    <br>
+    <hr>
     
-    <section class="contact">
-        <div class="content">
-            <h2>Contact Us</h2>
-            <p></p>   
-        </div>
-        <div class="container">
-            <div class="contactinfo">
-                <div class="box">
-                    <div class="icon"><span class="material-icons-outlined">location_on</span></div>
-                    <div class="text">
-                        <a href="https://www.google.com/maps/place/24%C2%B052'10.0%22N+67%C2%B003'09.0%22E/@24.8694381,67.0499302,17z/data=!3m1!4b1!4m4!3m3!8m2!3d24.8694381!4d67.0525051?entry=ttu">
-                            <h3>Address</h3>
-                        </a>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="box">
-<div class="icon"><span class="material-icons-outlined">call</span></div>
-                    <div class="text">
-                        <a href="https://wa.me/+923152866972">
-                            <h3>Phone</h3>
-                        </a>
-                        <p style="display: flex;">+923002850837</p>
-                    </div>
-                </div>
-                <div class="box">
-                <div class="icon"><span class="material-icons-outlined">email</span></div>
-                    <div class="text">
-                        <a href="mailto:standarddistributionservice@gmail.com">
-                            <h3>Email</h3>
-                        </a>
-                        <p>wakeoye24@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-            <div class="contactform">
-                <form>
-                    <h2>Send Message</h2>
-                    <div class="inputbox">
-                        <input type="text" name="" required="required">
-                        <span>Full Name</span>
-                    </div>
-                    <div class="inputbox">
-                        <input type="text" name="" required="required">
-                        <span>Email</span>
-                    </div>
-                    <div class="inputbox">
-                        <textarea required="required"></textarea>
-                        <span>Type Your Message...</span>
-                    </div>
-                    <div class="inputbox">
-                        <input type="submit" name="" value="Send">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-  
-        </div>
-        <p style="opacity: 0.3;">    &copy; 2025 WaKeOyE Company. All rights reserved.</p>
 
+<section class="contact">
+    <div class="content">
+        <h2>Contact Us</h2>
+        <p>We're here to bring a warm cup to your day. Get in touch with Wake Oye!</p>
+    </div>
+
+    <div class="container">
+        <div class="contactinfo">
+            <div class="box">
+                <div class="icon"><span class="material-icons-outlined">location_on</span></div>
+                <div class="text">
+                    <h3>Address</h3>
+                    <p>Karachi, Pakistan</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="icon"><span class="material-icons-outlined">call</span></div>
+                <div class="text">
+                    <h3>Phone</h3>
+                    <p><a href="https://wa.me/+923152866972">+92 300 2850837</a></p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="icon"><span class="material-icons-outlined">email</span></div>
+                <div class="text">
+                    <h3>Email</h3>
+                    <p><a href="mailto:wakeoye24@gmail.com">wakeoye24@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contactform">
+          <form id="contactForm" method="POST" action="send-email.php">
+    <h2>Send Message</h2>
+    <div class="inputbox">
+        <input type="text" name="name" required>
+        <span>Full Name</span>
+    </div>
+    <div class="inputbox">
+        <input type="email" name="email" required>
+        <span>Email</span>
+    </div>
+    <div class="inputbox">
+        <textarea name="message" required></textarea>
+        <span>Type Your Message...</span>
+    </div>
+    <div class="inputbox">
+        <input type="submit" value="Send">
+    </div>
+</form>
+
+            
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 WaKeOyE Company. All rights reserved.</p>
+</footer>
+<script src="index 2.js"></script>
 </body>
 </html>
