@@ -73,6 +73,24 @@
   transition: transform 0.4s, color 0.4s;
   animation: popIn 1s ease forwards;
 }
+.cart-count {
+  position: absolute;
+  top: 8px;
+  right: 0px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 18px;
+  font-weight: bold;
+  display: none; /* Hidden initially if 0 */
+}
+.icon-link {
+  position: relative;
+}
 
 /* Make icons hover stylish */
 .icon-link i:hover {
