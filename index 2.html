@@ -68,29 +68,27 @@
                 </div>
             </div>
         </div>
-
         <div class="contactform">
-          <form id="contactForm" method="POST" action="send-email.php">
-    <h2>Send Message</h2>
-    <div class="inputbox">
-        <input type="text" name="name" required>
-        <span>Full Name</span>
-    </div>
-    <div class="inputbox">
-        <input type="email" name="email" required>
-        <span>Email</span>
-    </div>
-    <div class="inputbox">
-        <textarea name="message" required></textarea>
-        <span>Type Your Message...</span>
-    </div>
-    <div class="inputbox">
-        <input type="submit" value="Send">
-    </div>
-</form>
-
-            
+            <h2>Send Message</h2>
+            <form onsubmit="sendmail(event)">
+                <div class="inputbox">
+                    <input type="text" name="name" required>
+                    <span>Full Name</span>
+                </div>
+                <div class="inputbox">
+                    <input type="email" name="email" required>
+                    <span>Email</span>
+                </div>
+                <div class="inputbox">
+                    <textarea name="message" required></textarea>
+                    <span>Type Your Message...</span>
+                </div>
+                <div class="inputbox">
+                    <input type="submit" value="Send">
+                </div>
+            </form>
         </div>
+                
     </div>
 </section>
 <footer>
@@ -121,7 +119,40 @@
     <div class="footer-bottom">
         <a href="profile.html" style="text-decoration: none;opacity: 0.4;"> <h3 style="color: #fff;font-weight: 400;font-size: 35px;margin-bottom: 15px;font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">  Our Web Crafter &#128187;        </h3> </a>  
            </div>
-</footer>
+        </footer>
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+    
+    <script>
+    
+    function sendmail(event) {
+        event.preventDefault(); // Prevent page reload
+        
+        var name = document.getElementsByName('name')[0].value;
+        var email = document.getElementsByName('email')[0].value;
+        var message = document.getElementsByName('message')[0].value;
+        
+        var obj = {
+            name: name,
+            email: email,
+            message: message
+        };
+        emailjs.init('2nrp4__jZ7w9SImHb'); // VERY IMPORTANT!
+        
+        emailjs.send('service_13vt4fc', 'template_lsd5xtt', obj)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert("Your message has been sent successfully!");
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert("Failed to send message. Please try again.");
+        });
+    }
+    </script>
+    
 <script src="index 2.js"></script>
 </body>
 </html>
