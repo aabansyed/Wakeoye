@@ -1,216 +1,723 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Wake Oye</title>
-    <!-- Swiper CSS -->
-<link
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wake Oye - Homepage</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="images/wake oye favicon.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: white;
+    }
+    h2 {
+      font-size: 36px;
+      color: gold;
+    }
+    h3 {
+      color: gold;
+    }
+    section {
+      padding: 60px 20px;
+    }
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 20px;
+    }
+    .slider img {
+      height: 300px;
+      border-radius: 10px;
+      scroll-snap-align: start;
+    }
+    .testimonial, .value-card, .feature-card, .product-card {
+      background: #111;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+    }
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      padding: 12px;
+      border-radius: 50%;
+      font-size: 24p  x;
+      z-index: 1000;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: gold;
+      color: black;
+      padding: 12px;
+      border-radius: 50%;
+      font-size: 20px;
+      z-index: 1000;
+      cursor: pointer;
+    }
+    summary {
+      cursor: pointer;
+      font-size: 18px;
+      color: gold;
+    }
+    details p {
+      color: #bbb;
+    }
+    .logo-img {
+    width: 80px;
+    height: auto;
+}
 
-  <!-- Remix Icon CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
-  <!-- Ensure you're also loading other stylesheets like boxicons -->
-  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <!-- box -->
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <!-- remix -->
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"/>
-    <link rel="shortcut icon" href="images/wake oye favicon.jpg" type="image/x-icon">
-    <!-- Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  </style>
 </head>
 <body>
-    <!-- Header -->
-     <header>
-        <a href="" class="logo">
-            <img src="images/logo (3).png">
-        </a>
-        <ul class="navlist">
-            <li><a href="#">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="product.html">Product</a></li>
-            <li> <a href="#">Vending Machine</a> </li>
-            <li><a href="index 2.html">Contact</a></li>
-        </ul>
-            <a href="Aptech/customer.html" class="nav-btn">Sign In</a>
-            <div class="bx bx-menu" id="menu-icon">
-     </header>
-     <!-- hero -->
-     <section class="hero">
-        <div class="hero-text">
-            <img src="images/logo wake oye .png" alt="WaKeOyE Logo" style="max-width: 100%; height: auto; object-fit: contain;">
-            <p>Welcome to Wake Oye
-                Instant tea and coffee, anytime — anywhere.
-                At Wake Oye, we specialize in premium premix tea and coffee solutions, powered by smart vending machines for offices, canteens, cafés, and more.
-                We bring convenience, consistency, and rich flavor to your everyday break — No message, No wait, just great taste in every cup.</p>
-            <div class="main-hero">
-                <a href="#" class="btn">Order Now</a>
-                <a href="#" class="price"><span>Premium Quality</span></a>
-            </div>
+  <header>
+ <a href="" class="logo">
+    <img src="images/chai 1.jpg" style="width: 80px; height: auto;">
+</a>
+    <ul class="navlist">
+        <li><a href="#">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li> <a href="vending.html">Vending Machine</a> </li>
+        <li><a href="index 2.html">Contact</a></li>
+    </ul>
+        <a href="Aptech/customer.html" class="nav-btn">Sign In</a>
+        <div class="bx bx-menu" id="menu-icon">
+ </div></header>
+
+  <section class="hero">
+    <div class="hero-text">
+        <img src="images/logo wake oye .png" alt="WaKeOyE Logo" style="max-width: 100%; height: auto; object-fit: contain;">
+        <p>Welcome to Wake Oye
+            Instant tea and coffee, anytime — anywhere.
+            At Wake Oye, we have specialization in premium premix tea and coffee solutions, powered by smart vending machines for offices, canteens, cafés, and more.
+            We bring convenience, consistency, and rich flavor to your everyday break — No delay, No wait, just great taste&nbsp;in&nbsp;every&nbsp;cup.</p>
+        <div class="main-hero">
+            <a href="#" class="btn">Order Now</a>
+            <a href="#" class="price"><span>Premium Quality</span></a>
         </div>
-        <div class="hero-img">
-            <img src="images/hero.png" alt="">
-        </div>
+    </div>
+    <div class="hero-img">
+        <img src="images/hero.png" alt="">
+        <div class="icons">
+    </div>
+      <a href="https://facebook.com" target="_blank"><i class="ri-facebook-fill" style="font-size: 24px;"></i></a>
+      <a href="https://wa.me" target="_blank"><i class="ri-whatsapp-line" style="font-size: 24px;"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="ri-instagram-line" style="font-size: 24px;"></i></a>
+  </div>
+  </section>
+  <br><br><br><br><br><br><br><br><br><br><br>
+<!-- PRODUCT SLIDER -->
+<section data-aos="fade-up">
+  <h2 style="text-align: center;">Our Coffee Section</h2>
+  <br><br><br>
+    <div class="slider" style="margin-left: 20%;">
+      <img src="images/IMG-20250430-WA0138.jpg" alt="Coffee 1" />
+      <img src="images/IMG-20250430-WA0139.jpg" alt="Coffee 2" />
+      <img src="images/IMG-20250430-WA0137.jpg" alt="Coffee 3" />
+  </div>
+</section>
+<br><br>
+<section data-aos="fade-up">
+  <h2 style="text-align: center;">Our Tea Section</h2>
+  <br><br><br>
+    <div class="slider" style="margin-left: 20%;">
+      <img src="images/masala chai.jpg" width="250px" height="500%"/>
+      <img src="images/kadak.jpg" width="250px" height="500%" />
+      <img src="images/cardamom.jpg" width="250px" height="500%"/>
+  </div>
+</section>
+<br><br>
+<h2 style="text-align: center;">Our Vending Machine</h2>
+<br><br><br>
+<div class="slider" style="margin-left: 20%;">
+  <img src="images/vending wake 2.jpg" alt="Vending Machine 2" width="250px" height="500%"/>
+  <br><br><br>
+  <img src="images/vending wake 1.jpg" alt="Vending Machine 1" width="250px" height="500%"/>
+  <br><br><br><br>
+  <img src="images/vending wake 3.jpg" alt="Vending Machine 3" width="250px" height="500%"/>
+  <br>
+</div>
         <div class="icons">
           <a href="https://facebook.com" target="_blank"><i class="ri-facebook-fill" style="font-size: 24px;"></i></a>
           <a href="https://wa.me" target="_blank"><i class="ri-whatsapp-line" style="font-size: 24px;"></i></a>
           <a href="https://instagram.com" target="_blank"><i class="ri-instagram-line" style="font-size: 24px;"></i></a>
-      </div>
+      </div>                                                                                                                                                                                                                                                                
       </section>
-      <!-- Slider Section -->
-<section class="home-slider">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-  
-        <!-- Slide 1 -->
-        <div class="swiper-slide">
-          <div class="slide-content">
-            <div class="slide-image">
-              <img src="images/wakeee 3.jpg" alt="Slide 1">
-            </div>
-            <div class="slide-text">
-              <h2>Premium Macchiato</h2>
-              <p>"Savor the elegance of a macchiato — a perfectly balanced espresso marked with a touch of velvety foam. A small, yet powerful indulgence for coffee lovers who seek a refined, bold experience."</p>
-              <a href="product.html" class="btn">Discover</a>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Slide 2 -->
-        <div class="swiper-slide">
-          <div class="slide-content">
-            <div class="slide-image">
-              <img src="images/wakeee 1.jpg" alt="Slide 2">
-            </div>
-            <div class="slide-text">
-              <h2>Espresso</h2>
-              <p>"Experience the intensity of pure espresso — a concentrated shot of rich, bold coffee that awakens the senses with every sip. Perfect for those who crave a strong, authentic coffee experience."</p>
-              <a href="product.html" class="btn">Discover</a>
-            </div>
-          </div>
-        </div>
-  <!-- Slide 3 -->
-  <div class="swiper-slide">
-    <div class="slide-content">
-      <div class="slide-image">
-        <img src="images/wakeee 2.jpg" alt="Slide 2">
-      </div>
-      <div class="slide-text">
-        <h2>Instant Black Coffee</h2>
-        <p>"Indulge in the rich, bold flavor of black coffee — a pure, unadulterated brew for those who appreciate the simple pleasure of a perfectly brewed cup."</p>
-        <a href="product.html" class="btn">Discover</a>
-      </div>
+<!-- TESTIMONIALS -->
+<section data-aos="fade-up">
+  <h2 style="text-align: center;">What Customers Say</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+    <div class="testimonial">
+      <p>“Absolutely love the Macchiato – the best vending coffee I’ve had!”</p>
+      <br>
+      <p style="color: gray;">– Rizwan E-Mart</p>
+    </div>
+    <div class="testimonial">
+      <p>“Impressive machine and perfect taste. Highly recommended.”</p>
+      <br>
+      <p style="color: gray;">– Shehzad Cbn University </p>
     </div>
   </div>
-  <div class="swiper-slide">
-    <div class="slide-content">
-      <div class="slide-image">
-        <img src="images/wakeee 4.jpg" alt="Slide 2">
-      </div>
-      <div class="slide-text">
-        <h2>Cappuccino</h2>
-        <p>"Indulge in the creamy perfection of a cappuccino — a harmonious instant of rich espresso, velvety steamed milk, and a dusting of frothy milk foam. The perfect balance of bold and smooth for your coffee cravings."</p>
-        <a href="product.html" class="btn">Discover</a>
-      </div>
-    </div>
-  </div>
+</section>
 
-  <div class="swiper-slide">
-    <div class="slide-content">
-      <div class="slide-image">
-        <img src="images/wakeee 5.jpg" alt="Slide 2">
-      </div>
-      <div class="slide-text">
-        <h2>Instant Cafe Latte</h2>
-        <p>"Experience the comforting warmth of a cafe latte — a smooth, velvety instant of espresso and steamed milk, crowned with a light layer of foam. It’s the perfect balance of rich coffee flavor and creamy texture, ideal for any time of day.".</p>
-        <a href="product.html" class="btn">Discover</a>
+<!-- VALUE PROPOSITION -->
+<section data-aos="fade-up">
+  <h2 style="text-align: center;">Why Choose Wake Oye</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+    <div class="value-card">
+      <i class="fas fa-mug-hot" style="font-size: 28px; color: gold;"></i>
+      <h3>Premium Taste</h3>
+      <p>Rich, smooth flavor brewed fresh on demand.</p>
+    </div>
+    <div class="value-card">
+      <i class="fas fa-clock" style="font-size: 28px; color: gold;"></i>
+      <h3>24/7 Availability</h3>
+      <p>Enjoy coffee any time of the day with no baristas needed.</p>
+    </div>
+    <div class="value-card">
+      <i class="fas fa-cogs" style="font-size: 28px; color: gold;"></i>
+      <h3>Smart Vending</h3>
+      <p>Touch-free, modern machines with easy refill and support.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEW: FEATURE HIGHLIGHTS -->
+<section data-aos="fade-up">
+  <h2 style="text-align: center;">Our Top Features</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
+    <div class="feature-card">
+      <i class="fas fa-leaf" style="font-size: 28px; color: gold;"></i>
+      <h3>Natural Ingredients</h3>
+      <p>100% natural ingredients — no compromise on quality or health.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-recycle" style="font-size: 28px; color: gold;"></i>
+      <h3>Eco-Friendly</h3>
+      <p>Sustainable packaging & energy-efficient vending machines.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-headset" style="font-size: 28px; color: gold;"></i>
+      <h3>24/7 Support</h3>
+      <p>Always available to help — anytime you need us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEW: FAVORITES GRID -->
+<section data-aos="fade-up">
+  <h2 style="text-align: center;">Customer Favorites</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-top: 40px;">
+    <div class="product-card">
+      <img src="images/cardamom.jpg" alt="cardamom" style="width: 100%; height: 500px; object-fit: cover; border-radius: 10px;" />
+      <br><br><br>
+      <h3>Cardamom</h3>
+      <p>Smooth espresso kissed with foam.</p>
+    </div>
+    <div class="product-card">
+      <img src="images/IMG-20250430-WA0139.jpg" alt="cappuccino" style="width: 110%; height: 500px; object-fit: cover; border-radius: 10px;" />
+      <br><br><br>
+      <h3>CAPPUCCINO</h3>
+      <p>Bold & intense — the classic favorite.</p>
+    </div>
+    <div class="product-card">
+      <img src="images/kadak.jpg" alt="Kadak Chai" style="width: 100%; height: 500px; object-fit: cover; border-radius: 10px;" />
+      <br><br><br>
+      <h3>Kadak Chai</h3>
+      <p>Pure, rich, and satisfying.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEW: FAQ -->
+<section data-aos="fade-up">
+  <h2 style="text-align: center;">Frequently Asked Questions</h2>
+  <div style="max-width: 800px; margin: auto;">
+    <br><br>
+    <style>
+      .accordion {
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        font-family: 'Segoe UI', sans-serif;
+      }
+    
+      .accordion-item {
+        border-bottom: 1px solid #e5e5e5;
+        background: #111;
+        color: #ffd700;
+      }
+    
+      .accordion-header {
+        padding: 20px;
+        background: #000;
+        cursor: pointer;
+        position: relative;
+        font-size: 1.1rem;
+        transition: background 0.3s;
+      }
+    
+      .accordion-header:hover {
+        background: #222;
+      }
+    
+      .accordion-header::after {
+        content: '+';
+        position: absolute;
+        right: 20px;
+        font-size: 22px;
+        transition: transform 0.3s ease;
+      }
+    
+      .accordion-header.active::after {
+        content: '-';
+      }
+    
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        background: #333;
+        color: #Fff;
+        font-size: 0.95rem;
+        transition: max-height 0.4s ease, padding 0.5s ease;
+      }
+    
+      .accordion-content.open {
+        padding: 35px 200px;
+      }
+    </style>
+    
+    <div class="accordion" id="faqAccordion"></div>
+    
+    <script>
+      const faqData = [
+        {
+          question: "Do your vending machines require plumbing?",
+          answer: "No, our machines are plug-and-play with built-in water tanks."
+        },
+        {
+          question: "Is there any subscription plan?",
+          answer: "Yes, we offer monthly plans for offices and cafés."
+        },
+        {
+          question: "Where do you ship?",
+          answer: "We ship across Pakistan and provide delivery tracking."
+        }
+      ];
+    
+      const accordionContainer = document.getElementById("faqAccordion");
+    
+      faqData.forEach(({ question, answer }) => {
+        const item = document.createElement("div");
+        item.className = "accordion-item";
+    
+        const header = document.createElement("div");
+        header.className = "accordion-header";
+        header.textContent = question;
+    
+        const content = document.createElement("div");
+        content.className = "accordion-content";
+        content.innerHTML = `<p>${answer}</p>`;
+    
+        header.addEventListener("click", () => {
+          const openHeader = document.querySelector(".accordion-header.active");
+          const openContent = document.querySelector(".accordion-content.open");
+    
+          if (openHeader && openHeader !== header) {
+            openHeader.classList.remove("active");
+            openContent.style.maxHeight = null;
+            openContent.classList.remove("open");
+          }
+    
+          header.classList.toggle("active");
+          if (content.classList.contains("open")) {
+            content.style.maxHeight = null;
+            content.classList.remove("open");
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.classList.add("open");
+          }
+        });
+    
+        item.appendChild(header);
+        item.appendChild(content);
+        accordionContainer.appendChild(item);
+      });
+    </script>
+    
+    <br><br>
+  </div>
+</section>
+
+<!-- NEW: COUNTERS -->
+<section data-aos="fade-up" class="impact-section">
+  <h2 class="impact-title">Our Impact</h2>
+  <div class="impact-container">
+    <div class="impact-box">
+      <h3 class="count" data-target="100000">0</h3>
+      <p>+ Cups Served</p>
+    </div>
+    <div class="impact-box">
+      <h3 class="count" data-target="150">0</h3>
+      <p>+ Clients</p>
+    </div>
+    <div class="impact-box">
+  <h3 class="count" data-target="98" data-suffix="%">0</h3>
+  <p>Satisfaction Rate</p>
+</div>
+
+  </div>
+</section>
+
+<style>
+  .impact-section {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.impact-title {
+  font-size: 3rem;
+  color: gold;
+  margin-bottom: 60px;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+
+.impact-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.impact-box {
+  background: #111;
+  border: 2px solid gold;
+  padding: 30px 20px;
+  border-radius: 16px;
+  width: 200px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.impact-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+}
+
+.count {
+  font-size: 2.8rem;
+  color: gold;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+</style>
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/+923002850837" class="floating-whatsapp" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<div class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+  
+</div>
+<!-- footer.html -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<footer class="modern-footer">
+  <div class="footer-wave"></div>
+  <div class="footer-container">
+    <div class="footer-column brand">
+      <h2>Wake Oye</h2>
+      <p>Subscribe to Wake Oye to discover premium coffee, expert brewing, and behind-the-scenes stories.</p>
+    </div>
+
+    <div class="footer-column office">
+      <h3>Office</h3>
+      <p>Fedrel B Area Block 19<br>Karachi, Pakistan</p>
+      <p>wakeoye24@gmail.com</p>
+      <a href="https://wa.me/+923002850837">
+      <p>+92 300 2850837
+        </a>
+      </p>
+    </div>
+
+    <div class="footer-column links">
+      <h3>Links</h3>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="/product.html">Products</a></li>
+        <li><a href="index 2.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column newsletter">
+      <h3>Newsletter</h3>
+      <form>
+        <input type="email" placeholder="Enter your email id" required>
+        <button type="submit">➔</button>
+      </form>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
       </div>
     </div>
   </div>
-
-
-  <div class="swiper-slide">
-    <div class="slide-content">
-      <div class="slide-image">
-        <img src="images/wakeee 6.jpg" alt="Slide 2">
-      </div>
-      <div class="slide-text">
-        <h2>Instant Tea</h2>
-        <p>"Rinse away the day's grind with a refreshing splash of water, cleansing and resetting your senses. Whether it's the simple act of rinsing your glass or preparing your next beverage, it's the first step to freshness and clarity."</p>
-        <a href="product.html" class="btn">Discover</a>
-      </div>
-    </div>
+  <a href="" class="web-btn">
+      <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">WEB CRAFTER</h1>
+    </a>
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Wake Oye — All Rights Reserved</p>
+    <p>Crafted with ❤️ by 
+    </p>
   </div>
-  
-      </div>
-  
-      <!-- Navigation buttons -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-  
-      <!-- Pagination (dots below) -->
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
-  
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <div class="icons">
-    <a href=""><i class="fab fa-facebook-f"></i></a>
-    <a href=""><i class="ri-whatsapp-line"></i></a>
-    <a href=""><i class="ri-instagram-line"></i></a>
-      </div>
-      
-  <footer>
-    <div class="footer-container">
-      <br><br><br><br>
-      <hr>
-        <div class="footer-section">
-       <a href="/index 2.html" style="text-decoration: none;">     <h2 style="color:  red;">Contact</h2></a>
-       <a href="mailto:standarddistributionservice@gmail.com" style="color: white;text-decoration: none;opacity: 0.3;"><p>Email:wakeoye24@gmail.com</p></a>
-       <a href="https://wa.me/+923002850837" style="color: white;text-decoration: none;opacity:0.3;"><p>Phone:+923002850837</p>     </a> 
-        </div>
-        <div class="footer-section">
-      <a href="about.html" style="text-decoration: none;">      <h2 style="color:  #e74c3c;">About</h2></a>
-            <p style="opacity:0.3;">Learn more about our company and our mission.</p>
-        </div>
-        <div class="footer-section">
-           <h2 style="color: #e74c3c;">Follow Us</h2>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p style="text-align: center;opacity: 0.3;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &copy; 2025 Wake Oye Company. All rights reserved.</p>
-    </div>
-    <div class="footer-bottom">
-        <a href="profile.html" style="text-decoration: none;opacity: 0.4;"> <h3 style="color: #fff;font-weight: 400;font-size: 35px;margin-bottom: 15px;font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">  Our Web Crafter &#128187;        </h3> </a>  
-           </div>
+  <style>
+    /* footer.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+footer {
+  font-family: 'Poppins', sans-serif;
+}
+
+.modern-footer {
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: #fff;
+  position: relative;
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+.footer-wave {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #ecf0f3;
+  border-top-left-radius: 100% 60px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 220px;
+}
+.web-btn{
+      width: 100%;
+      padding: 10px;
+      text-align: left;
+      color: gold;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+
+
+.footer-column h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.footer-column h3::after {
+  content: '';
+  width: 40px;
+  height: 2px;
+  background: #f1c40f;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+
+.footer-column p,
+.footer-column a {
+  color: #ddd;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column a:hover {
+  color: #f1c40f;
+}
+
+.newsletter form {
+  display: flex;
+  border-bottom: 1px solid #888;
+  padding-bottom: 10px;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  background: none;
+  color: #fff;
+  outline: none;
+}
+
+.newsletter button {
+  background: none;
+  border: none;
+  color: #f1c40f;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.socials {
+  margin-top: 15px;
+}
+
+.socials a {
+  color: #fff;
+  font-size: 18px;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #f1c40f;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #444;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer-bottom strong {
+  color: #f1c40f;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .newsletter form {
+    justify-content: center;
+  }
+}
+
+  </style>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
+  // footer.js
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('year').textContent = new Date().getFullYear();
+});
+</script>
 </footer>
-      <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-      <script src="dom.js"></script>
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  const counters = document.querySelectorAll('.count');
+  counters.forEach(counter => {
+    const update = () => {
+      const target = +counter.getAttribute('data-target');
+      const current = +counter.innerText;
+      const increment = target / 100;
+      if (current < target) {
+        counter.innerText = Math.ceil(current + increment);
+        setTimeout(update, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    update();
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.count');
+
+    const animateCounter = (el) => {
+      const target = parseFloat(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      let current = 0;
+
+      const update = () => {
+        const increment = target / 100;
+        if (current < target) {
+          current += increment;
+          el.innerText = Math.ceil(current).toLocaleString() + suffix;
+          requestAnimationFrame(update);
+        } else {
+          el.innerText = target.toLocaleString() + suffix;
+        }
+      };
+
+      update();
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+
+    counters.forEach(counter => observer.observe(counter));
+  });
+</script>
+
 </body>
 </html>
