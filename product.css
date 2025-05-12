@@ -149,7 +149,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    padding: 60px 30px;
+    padding: 10px 300px;
   }
   .product{
     border-radius: 12px;
@@ -166,6 +166,31 @@
     width: 100%;
     height: 220px;
     object-fit: cover;
+  }
+  .hero-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .scroll-btn {
+    padding: 10px 20px;
+    background-color: #c9a86b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .scroll-btn:hover {
+    background-color: #a88347;
+  }
+  
+  #coffee, #tea {
+    margin-top: 60px;
+    transition: opacity 0.8s ease;
   }
   
   .product h2 {
