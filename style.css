@@ -1048,3 +1048,80 @@ width: 360px;
 margin: 0 auto;
 }
 }
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Layout */
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* Navigation */
+.navlist {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navlist li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navlist li a:hover {
+  color: #ae8757;
+}
+
+/* Sign-in Button */
+.nav-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Menu Icon (mobile) */
+#menu-icon {
+  font-size: 28px;
+  color: white;
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navlist {
+    display: none;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+}
