@@ -45,3 +45,10 @@ function changeSlide(e, dir) {
 modal.addEventListener('click', e => {
   if (e.target === modal) closeModal();
 });
+  // Apply animation delay for staggered effect
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".machine-card");
+    cards.forEach((card, index) => {
+      card.style.setProperty("--delay", `${index * 0.2}s`);
+    });
+  });
