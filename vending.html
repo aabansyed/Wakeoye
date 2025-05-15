@@ -24,6 +24,7 @@
 </header>
     
   <section class="vending-section" style="background-image:url(download\ \(2\).jpg) ;background-size: cover; background-position: center; " >
+  <br><br><br>
     <h1 style="font-display: fallback; font-weight: 900; font-size: xx-large;">Wake Oye Vending Machines</h1>
     <div class="machines-grid">
       <!-- Template Machine Card -->
@@ -328,6 +329,48 @@ footer {
   .newsletter form {
     justify-content: center;
   }
+}
+/* Entry animation from bottom */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.machines-grid .machine-card {
+  opacity: 0;
+  animation: slideUp 1s ease forwards;
+  animation-delay: var(--delay);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Hover effect with goldenrod background overlay */
+.machine-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: goldenrod;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+
+.machine-card:hover::before {
+  opacity: 0.3;
+}
+
+/* Ensure image is under overlay */
+.machine-card img {
+  position: relative;
+  z-index: 0;
 }
 
   </style>
