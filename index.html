@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wake Oye - Homepage</title>
   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
   <link rel="shortcut icon" href="images/wake oye favicon.jpg" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
@@ -103,14 +105,11 @@
 
   <section class="hero">
     <div class="hero-text">
-        <img src="images/logo wake oye .png" alt="WaKeOyE Logo" style="max-width: 100%; height: auto; object-fit: contain;">
-        <p>Welcome to Wake Oye
-            Instant tea and coffee, anytime — anywhere.
-            At Wake Oye, we have specialization in premium premix tea and coffee solutions, powered by smart vending machines for offices, canteens, cafés, and more.
-            We bring convenience, consistency, and rich flavor to your everyday break — No delay, No wait, just great taste&nbsp;in&nbsp;every&nbsp;cup.</p>
+        <img src="images/logo wake oye .png" alt="WaKeOyE Logo" style="max-width: 80%; height: auto; object-fit: contain;">
+        <p style="font-size: large; font-family: 'Times New Roman', Times, serif;">Welcome to Wakeoye where we offer premium premix tea and coffee, anytime, anywhere ,also offer convenient, consistent, and flavorful solutions with smart vending machines for various locations. Enjoy great taste without the wait!</p>
         <div class="main-hero">
-            <a href="#" class="btn">Order Now</a>
-            <a href="#" class="price"><span>Premium Quality</span></a>
+          <a href="product.html" class="btn" style="font-family: 'Courier New', Courier, monospace;">Order Now</a>
+          <a href="#" class="price"><span>                          Premium Quality                       </span></a>
         </div>
     </div>
     <div class="hero-img">
@@ -121,6 +120,7 @@
       <a href="https://wa.me" target="_blank"><i class="ri-whatsapp-line" style="font-size: 24px;"></i></a>
       <a href="https://instagram.com" target="_blank"><i class="ri-instagram-line" style="font-size: 24px;"></i></a>
   </div>
+  <br><br><br>
   </section>
   <br><br><br><br><br><br><br><br><br><br><br>
 <!-- PRODUCT SLIDER -->
@@ -128,8 +128,8 @@
   <h2 style="text-align: center;">Our Coffee Section</h2>
   <br><br><br>
     <div class="slider" style="margin-left: 20%;">
-      <img src="images/IMG-20250430-WA0138.jpg" alt="Coffee 1" />
       <img src="images/IMG-20250430-WA0139.jpg" alt="Coffee 2" />
+      <img src="images/IMG-20250430-WA0138.jpg" alt="Coffee 1" />
       <img src="images/IMG-20250430-WA0137.jpg" alt="Coffee 3" />
   </div>
 </section>
@@ -138,9 +138,9 @@
   <h2 style="text-align: center;">Our Tea Section</h2>
   <br><br><br>
     <div class="slider" style="margin-left: 20%;">
-      <img src="images/masala chai.jpg" width="250px" height="500%"/>
-      <img src="images/kadak.jpg" width="250px" height="500%" />
       <img src="images/cardamom.jpg" width="250px" height="500%"/>
+      <img src="images/kadak.jpg" width="250px" height="500%" />
+      <img src="images/masala chai.jpg" width="250px" height="500%"/>
   </div>
 </section>
 <br><br>
@@ -234,18 +234,18 @@
     <div class="product-card">
       <img src="images/cardamom.jpg" alt="cardamom" class="product-img" />
       <h3>CARDAMOM</h3>
-      <p>Smooth espresso kissed with foam.</p>
-    </div>
-    <div class="product-card">
-      <img src="images/IMG-20250430-WA0139.jpg" alt="cappuccino" class="product-img" />
-      <h3>CAPPUCCINO</h3>
-      <p>Bold & intense — the classic favorite.</p>
+      <p>a soothing embrace, drawing you near.</p>
     </div>
     <div class="product-card">
       <img src="images/kadak.jpg" alt="Kadak Chai" class="product-img" />
       <h3>KADAK CHAI</h3>
 
-      <p>Pure, rich, and satisfying.</p>
+      <p>Bold tea, Bold flavors and pure joy.</p>
+    </div>
+    <div class="product-card">
+      <img src="images/IMG-20250430-WA0139.jpg" alt="cappuccino" class="product-img" />
+      <h3>CAPPUCCINO</h3>
+      <p>Crafted with care, a cappucino's pure delight.</p>
     </div>
   </div>
 </section>
@@ -485,8 +485,26 @@
   <i class="fab fa-whatsapp"></i>
 </a>
 <div class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-  
+  <i class="fas fa-arrow-up"></i>
 </div>
+<style>
+  .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: gold;
+  color: black;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+</style>
 <!-- footer.html -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <footer class="modern-footer">
@@ -733,7 +751,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 </script>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+
+document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll('.count');
 
     const animateCounter = (el) => {
@@ -767,6 +786,5 @@ document.addEventListener('DOMContentLoaded', () => {
     counters.forEach(counter => observer.observe(counter));
   });
 </script>
-
 </body>
 </html>
