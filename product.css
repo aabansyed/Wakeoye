@@ -5,18 +5,33 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
 body {
-  background: #000;
-  color: white;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #FFF;
+  position: relative;
+  min-height: 100vh;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(images/cup-2619216_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: -1;
+}
 /* Header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #000;
   padding: 20px 50px;
   position: sticky;
   top: 0;
@@ -69,7 +84,7 @@ body {
 
 .icon-link i {
   font-size: 28px;
-  color: #fff;
+  color: black;
   transition: transform 0.4s, color 0.4s;
   animation: popIn 1s ease forwards;
 }
