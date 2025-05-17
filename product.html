@@ -10,37 +10,262 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
-<header class="header">
-  <div class="logo">
-    <img src="images/logo wake oye .png" alt="Coffee n Chai Logo" style="height: 60px;">
-  </div>
-  <nav class="nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="#">Product</a>
-    <a href="vending.html">Vending Machine</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="icons">
-    <a href="https://wa.me/+923002850837" target="_blank" class="icon-link">
-      <i class="fa-brands fa-whatsapp"></i>
+<header>
+  <div class="header-container">
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <img src="images/logo wake oye .png" alt="Wake Oye Logo" />
     </a>
-    <a href="" class="icon-link cart-icon">
+    <div class="nav">
+      <!-- Desktop Nav -->
+      <ul class="navlist desktop-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="vending.html">Vending Machine</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+    <!-- Social Icons -->
+    <div class="social-icons desktop-nav">
+      <a href="https://www.facebook.com/profile.php?id=61557693606914"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/+923002850837"><i class="fab fa-whatsapp"></i></a>
+      <a href="" class="icon-link cart-icon">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count">0</span> <!-- Add this inside cart link -->
+    </a>          
+    </div>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Mobile Full-Screen Overlay Menu -->
+   <div class="nav">
+     <div class="nav-overlay" id="navOverlay">
+       <ul class="navlist">
+         <li><a href="index.html">Home</a></li>
+         <br>
+         <li><a href="about.html">About</a></li>
+         <br>
+         <li><a href="product.html">Product</a></li>
+         <br>
+         <li><a href="vending.html">Vending Machine</a></li>
+         <br>
+         <li><a href="contact.html">Contact</a></li>
+         <br>
+        </ul>
+        <div class="social-icons" style="display: flex;">
+          <a href="https://www.facebook.com/profile.php?id=61557693606914"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/+923002850837"><i class="fab fa-whatsapp"></i></a>
+           <a href="" class="icon-link cart-icon">
       <i class="fas fa-shopping-cart"></i>
       <span class="cart-count">0</span> <!-- Add this inside cart link -->
     </a>    
-    <a href="https://www.facebook.com/profile.php?id=61557693606914&rdid=PMdgea7SpNL6fSC0&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1EgLAZq6Ge%2F#" target="_blank" class="icon-link">
-      <i class="fa-brands fa-facebook"></i>
-    </a>
-  </div>
-  
+        </div>
+      </div>
+    </div>
 </header>
-<section class="hero">
-  <h1>Discover Your Perfect Instant Premix </h1>
-  <p>Luxury Coffee & Chai Crafted for You.</p>
-</section>
 
+
+<!-- STYLES -->
+<style>
+/* Base Styles */
+/* Hamburger Icon (3 lines) */
+/* Header container */
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1001;
+}
+
+/* Logo */
+.logo img {
+  width: 150px;
+}
+
+/* Desktop nav */
+.desktop-nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* Nav items */
+.nav {
+  display: flex;
+  gap: 30px;
+}
+.nav li{
+  list-style: none;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  background: gold;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #ae8757;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Social icons */
+.social-icons a {
+  background: gold;
+  color: black;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+/* Cart count */
+.cart-icon {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.hamburger span {
+  height: 3px;
+  background: gold;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Transform to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Overlay nav (mobile) */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(0, 0, 0, 0.95);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.nav-overlay.show {
+  height: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navlist {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .social-icons {
+    margin-top: 30px;
+    gap: 25px;
+  }
+}
+
+
+</style>
+
+<!-- SCRIPT -->
+<script>
+
+function toggleMenu(btn) {
+    btn.classList.toggle("active");
+    document.getElementById("navOverlay").classList.toggle("show");
+  }
+
+
+</script>
+<br><br>
+  <hr style="border: none; height: 2px; background-color: gold;">
+<header style="background:#111; padding:20px; text-align:center; border-bottom:1px solid gold;">
+  <h1 style="font-family:'Playfair Display',serif; font-size:2.5em; color:gold; margin:0;">Discover Your Perfect Instant Premix</h1>
+  <p style="color:#ccc;">Luxury Coffee & Tea Crafted for You.</p>
+</header>
+<br>
 <section class="products">
   <!-- 20 Products -->
   
@@ -54,7 +279,7 @@
   </div>
   <div class="product-card">
     <img src="https://img.freepik.com/free-photo/high-angle-tasty-indian-drinks-arrangement_23-2149312367.jpg?t=st=1745799864~exp=1745803464~hmac=122a7e421eccde1bdf5fdfd1f2e1d1d2bea37211a3b0da7e9b429a0c2ab1d0a9&w=996" alt="Herbal Tea">
-    <h2>Cardiumum Tea</h2>
+    <h2>Cardamom Tea</h2>
     <p>Relaxing caffeine-free instant of herbs.</p>
     <br><br>
         <h1>Price - 1950 RS</h1>
@@ -64,7 +289,7 @@
   
     <div class="product-card">
       <img src="https://img.freepik.com/free-photo/steaming-cup-chai-tea-with-star-anise-cinnamon-sticks-cloves-black-surface_9975-124486.jpg?t=st=1745808497~exp=1745812097~hmac=7e27cc3539b4a2b9fd9b68d6d1b17fa0302591b740c0622d8dbee6a7a94ea6ff&w=1380" alt="Turmeric Chai">
-      <h2>Karak Chai</h2>
+      <h2>Kadak Chai</h2>
       <p>A warm, golden instant of spices and turmeric.
         Packed with antioxidants and wellness benefits.</p>
         <h1>Price - 1950 RS</h1>
@@ -107,22 +332,29 @@
     <h2>Kashmiri Chai</h2>
     <p>Fragrant pink chai with hints of almond and spices.
       A warming, flavorful instant to transport your senses.</p>
-    <button class="btn">Coming Soon</button>
+      <button class="btn">Coming Soon</button>
+    </div>
+    
   </div>
-  
-  <div class="product-container">
-  <hr class="divider">
-<h1>Coffee Section</h1>
+</section>
+<br>
+<br>
+<hr style="border: none; height: 2px; background-color: #ae8757;">
+<br><br>
+<div class="product-container">
+  <h1 style="color:  #f1c40f;">COFFEE SECTION</h1>
+</div>
+  <br><br>
+<hr style="border: none; height: 2px; background-color: #ae8757;">
 
-<div class="product-card">
-  <img src="https://img.freepik.com/free-photo/cup-americano-coffee-placed-newspaper_140725-6007.jpg?t=st=1745792524~exp=1745796124~hmac=ff35f986b2daa084152ce1d491370e9c54287a7baa14d31fefb5d5e1cf782d34&w=996" alt="Americano">
+<section class="products">
+  <div class="product-card">
+    <img src="https://img.freepik.com/free-photo/cup-americano-coffee-placed-newspaper_140725-6007.jpg?t=st=1745792524~exp=1745796124~hmac=ff35f986b2daa084152ce1d491370e9c54287a7baa14d31fefb5d5e1cf782d34&w=996" alt="Americano">
   <h2>Americano</h2>
-    <p>Rich and bold, for those who crave pure coffee strength in every sip.</p>
-    <h1>Price - 14000</h1>
+  <p>Rich and bold, for those who crave pure coffee strength in every sip.</p>
+  <h1>Price - 14000</h1>
     <button class="btn">Buy Now</button>
   </div>
-  
-  
   <div class="product-card">
     <img src="https://img.freepik.com/premium-photo/creamy-caramel-latte-yummy-delicious-hot-drink-image-photography_1020697-502105.jpg?w=996" alt="Caramel Coffee">
     <h2>Caramel Coffee</h2>
@@ -130,73 +362,78 @@
     <h1>Price - 2800</h1>
     <button class="btn">Buy Now</button>
   </div>
-  <div class="product-card">
+ <div class="product-card">
     <img src="images/coffee 2.avif" alt="Coffee">
     <h2>Hot Chocolate</h2>
     <p>A warm embrace in a cup — velvety cocoa for the ultimate comfort drink</p>
     <h1>Price - 3000</h1>
     <button class="btn">Buy Now</button>
   </div>
-  
-  
   <div class="product-card">
-    <img src="https://img.freepik.com/free-photo/milky-latte-with-chocolate-vanilla-biscuit-cookies_114579-3744.jpg?t=st=1745808441~exp=1745812041~hmac=59328c756b9247a6cc2612b22a98124a871baaa96037f954abf77830d238f41a&w=740" alt="Flat White">
+     <img src="https://img.freepik.com/free-photo/milky-latte-with-chocolate-vanilla-biscuit-cookies_114579-3744.jpg?t=st=1745808441~exp=1745812041~hmac=59328c756b9247a6cc2612b22a98124a871baaa96037f954abf77830d238f41a&w=740" alt="Flat White">
     <h2>Coffee Cappuccino</h2>
     <p>Silky smooth and rich, a perfect balance of espresso and cream.</p>
     <h1>Price - 2400</h1>
     <button class="btn">Buy Now</button>
   </div>
   
-  <div class="product-card">
-    <img src="https://img.freepik.com/free-photo/side-view-latte-macchiato-coffee-glass-wooden-table_140725-11987.jpg?t=st=1745798487~exp=1745802087~hmac=fd97d50149ac1631dded19daf8ba7afd75358344bbf46e3245f6b98d4a6c89b2&w=740" alt="Macchiato">
+    <div class="product-card">
+     <img src="https://img.freepik.com/free-photo/side-view-latte-macchiato-coffee-glass-wooden-table_140725-11987.jpg?t=st=1745798487~exp=1745802087~hmac=fd97d50149ac1631dded19daf8ba7afd75358344bbf46e3245f6b98d4a6c89b2&w=740" alt="Macchiato">
     <h2>Macchiato</h2>
     <p>Bold espresso topped with a touch of velvety foam.
       A perfect balance of strength and smoothness.</p>
       <h1>Price - 2800</h1>
       <button class="btn">Buy Now</button>
     </div>
-    
   <div class="product-card">
-    <img src="https://img.freepik.com/free-photo/high-view-glass-cappucino-with-coffee-beans_23-2148251687.jpg?t=st=1745808319~exp=1745811919~hmac=2ea93e561853ceb103fd3e2211103558433bc3e99ce2535cc4fcc44852eca67f&w=740" alt="Hazelnut Coffee">
+        <img src="https://img.freepik.com/free-photo/high-view-glass-cappucino-with-coffee-beans_23-2148251687.jpg?t=st=1745808319~exp=1745811919~hmac=2ea93e561853ceb103fd3e2211103558433bc3e99ce2535cc4fcc44852eca67f&w=740" alt="Hazelnut Coffee">
     <h2>Coffee Latte</h2>
     <p>Aromatic hazelnut with a rich coffee base.
       A nutty, velvety blend to savor every sip.</p>
       <h1>Price - 2400</h1>
       <button class="btn">Buy Now</button>
   </div>
-  <div class="product-card">
-    <img src="https://img.freepik.com/premium-photo/cup-fresh-scented-morning-coffee-cheerful-start-day-beautiful-coffee-cup-with-coffee-dark-table_73989-9091.jpg?w=996" alt="Irish Coffee">
+    <div class="product-card" style="height: 500px;">
+       <img src="https://img.freepik.com/premium-photo/cup-fresh-scented-morning-coffee-cheerful-start-day-beautiful-coffee-cup-with-coffee-dark-table_73989-9091.jpg?w=996" alt="Irish Coffee">
     <h2>Black Coffee</h2>
     <p>Rich, bold espresso with a smooth Irish twist.
       The perfect instant of warmth and indulgence.</p>
       <h1>Price - 14000</h1>
       <button class="btn">Buy Now</button>
+    <br><br><br><br><br><br><br>  
     </div>
-    
-    <div class="product-card">
-      <img src="https://img.freepik.com/premium-photo/steaming-espresso-shot-crystalclear-glass-capturing-rich-aroma-inviting-warmth-fre_871349-19319.jpg?w=1060" alt="Expresso Shot">
+    <div class="product-card" style="height: 500px;">
+     <img src="https://img.freepik.com/premium-photo/steaming-espresso-shot-crystalclear-glass-capturing-rich-aroma-inviting-warmth-fre_871349-19319.jpg?w=1060" alt="Expresso Shot">
       <h2>Espresso Shot</h2>
       <p>Strong, rich, and ready to energize.</p>
-    <p>One shot, endless energy.</p>
-    <h1>Price - 14000</h1>
+      <p>One shot, endless energy.</p>
+      <h1>Price - 14000</h1>
     <button class="btn">Buy Now</button>
-  </div>
+    <br><br><br><br><br><br><br>
+    </div>
   
-  <div class="product-card" >
+  <div class="product-card" style="height: fit-content;">
     <img src="https://img.freepik.com/premium-photo/pumpkin-spice-latte-glass-mug_131885-492.jpg?w=996" alt="Latte">
     <h2>Vanilla Latte</h2>
     <p>Smooth, sweet & elegant flavor experience.</p>
     <h1>Price - 2550 RS</h1>
     <button class="btn">Buy Now</button>
   </div>
-</div>
+   <div class="product-card">
+<img src="images/IMG-20250430-WA0136.jpg" alt="Mocha Frappé">
+    <h2>Rinse</h2>
+    <p>Chilled mocha magic with a chocolatey swirl.</p>
+    <button class="btn">Buy Now</button>
+    </div>
+  <div class="product-container">
   <div class="product-card">
-    <img src="https://img.freepik.com/free-photo/glass-milk-dark-wooden-surface_1150-41969.jpg?t=st=1745805728~exp=1745809328~hmac=c2492cb43c85943d52583de432393b613fd148fbcd9e541a5f37fcfe13b66ebe&w=996" alt="Mocha Frappé">
+<img src="https://img.freepik.com/free-photo/glass-milk-dark-wooden-surface_1150-41969.jpg?t=st=1745805728~exp=1745809328~hmac=c2492cb43c85943d52583de432393b613fd148fbcd9e541a5f37fcfe13b66ebe&w=996" alt="Mocha Frappé">
     <h2>Hot Milk</h2>
     <p>Chilled mocha magic with a chocolatey swirl.</p>
     <button class="btn">Buy Now</button>
-  </div>
-  </div>
+    </div>
+</section>
+</div>
   <style>
 .product-container {
   max-width: 600px;
@@ -227,14 +464,7 @@
   border-radius: 5px;
 }
 
-.divider {
-  border: none;
-  border-top: 2px solid #e0e0e0;
-  margin: 40px 0;
-}
-
 </style>
-</section>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <footer class="modern-footer">
   <div class="footer-wave"></div>
