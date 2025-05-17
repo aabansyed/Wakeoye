@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_content = "You received a new message:\n\n";
     $email_content = "Name: $name\n";
     $email_content = "Email: $email\n";
+    $email_content = "number: $number\n";
     $email_content = "Message:\n$message\n";
 
     // Email Headers
@@ -30,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Email sent successfully
         echo 
             alert('Thank you! Your message has been sent successfully.');
-            window.location.href = 'index 2.html';
+            window.location.href = 'contact.html';
         
     } else {
         // Email failed
@@ -42,5 +43,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Not a POST request
     echo 
         alert('Invalid access.');
-        window.location.href = 'index 2.html';
+        window.location.href = 'contact.html';
+}
+function sendmail(event) {
+    event.preventDefault();
+
+    var obj = {
+        name: document.getElementsByName('name')[0].value,
+        email: document.getElementsByName('email')[0].value,
+        number: document.getElementsByName('number')[0].value,
+        message: document.getElementsByName('message')[0].value
+    };
+
+    emailjs.init('YOUR_PUBLIC_KEY'); // Starts with 'public_...'
+
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', obj)
+    .then(function(response) {
+        alert("Message sent successfully!");
+    }, function(error) {
+        alert("Message failed. Check console.");
+        console.log('FAILED...', error);
+    });
 }
