@@ -9,39 +9,262 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    
+        
+        
     <link rel="stylesheet" href="contact.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <a href="index.html" class="logo">
-                <img src="images/logo wake oye .png" alt="Wake Oye Logo">
-            </a>
-            <ul class="navlist">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="product.html">Product</a></li>
-                <li><a href="vending.html">Vending Machine</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://wa.me/+923002850837"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
+ <header>
+  <div class="header-container">
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <img src="images/logo wake oye .png" alt="Wake Oye Logo" />
+    </a>
+    <div class="nav">
+      <!-- Desktop Nav -->
+      <ul class="navlist desktop-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="vending.html">Vending Machine</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+    <!-- Social Icons -->
+    <div class="social-icons desktop-nav">
+      <a href="https://www.facebook.com/profile.php?id=61557693606914"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/+923002850837"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Mobile Full-Screen Overlay Menu -->
+   <div class="nav">
+     <div class="nav-overlay" id="navOverlay">
+       <ul class="navlist">
+         <li><a href="index.html">Home</a></li>
+         <br>
+         <li><a href="about.html">About</a></li>
+         <br>
+         <li><a href="product.html">Product</a></li>
+         <br>
+         <li><a href="vending.html">Vending Machine</a></li>
+         <br>
+         <li><a href="contact.html">Contact</a></li>
+                  <br>
+                  </ul>
+        
+        <div class="social-icons" style="display: flex;">
+          <a href="https://www.facebook.com/profile.php?id=61557693606914"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/+923002850837"><i class="fab fa-whatsapp"></i></a>
         </div>
-    </header>
-    <br>
-    <hr>
+      </div>
+    </div>
+</header>
+
+
+<!-- STYLES -->
+<style>
+/* Base Styles */
+/* Hamburger Icon (3 lines) */
+/* Header container */
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1001;
+}
+
+/* Logo */
+.logo img {
+  width: 150px;
+}
+
+/* Desktop nav */
+.desktop-nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* Nav items */
+.nav {
+  display: flex;
+  gap: 30px;
+}
+.nav li{
+  list-style: none;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  background: gold;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #ae8757;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Social icons */
+.social-icons a {
+  background: gold;
+  color: black;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+/* Cart count */
+.cart-icon {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.hamburger span {
+  height: 3px;
+  background: gold;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Transform to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Overlay nav (mobile) */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(0, 0, 0, 0.95);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.nav-overlay.show {
+  height: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navlist {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .social-icons {
+    margin-top: 30px;
+    gap: 25px;
+  }
+}
+
+
+</style>
+
+<!-- SCRIPT -->
+<script>
+
+function toggleMenu(btn) {
+    btn.classList.toggle("active");
+    document.getElementById("navOverlay").classList.toggle("show");
+  }
+
+
+</script>
     
 
 <section class="contact">
-    <div class="content">
-        <h2>Contact Us</h2>
-        <p>We're here to bring a warm cup to your day. Get in touch with Wake Oye!</p>
-    </div>
-
+  <hr style="border: none; height: 2px; background-color: gold;">
+    <header style="background:#111; padding:20px; text-align:center; border-bottom:1px solid gold;">
+  <h1 style="font-family:'Playfair Display',serif; font-size:2.5em; color:gold; margin:0;">Contact US</h1>
+  <p style="color:#ccc;">Set Your Day With Wake Oye Cup</p>
+</header>
+<br><br><br><br>
     <div class="container">
         <div class="contactinfo">
             <div class="box">
@@ -70,27 +293,30 @@
         </div>
         <div class="contactform">
             <h2>Send Message</h2>
-            <form onsubmit="sendmail(event)">
+            
                 <div class="inputbox">
-                    <input type="text" name="name" required>
+                    <input type="text" id="name" required>
                     <span>Full Name</span>
                 </div>
                 <div class="inputbox">
-                    <input type="email" name="email" required>
+                    <input type="email" id="email" required>
                     <span>Email</span>
                 </div>
                 <div class="inputbox">
-                    <input type="text" name="name" required>
+                    <input type="number" id="number" required>
                     <span>Phone Number</span>
                     <br><br>
                 <div class="inputbox">
-                    <textarea name="message" required></textarea>
+                    <textarea id="message" required></textarea>
                     <span>Type Your Message...</span>
                 </div>
                 <div class="inputbox">
+                      <div class="inputbox" onclick="sendmail()" >
                     <input type="submit" value="Send">
+                  </div>
+                    
                 </div>
-            </form>
+            
         </div>
                 
     </div>
@@ -100,26 +326,33 @@
         <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-        </script>
+   
+        <script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "2nrp4__jZ7w9SImHb",
+      });
+   })();
+</script>
     
     <script>
     
-    function sendmail(event) {
-        event.preventDefault(); // Prevent page reload
+    function sendmail() {
+       
         
-        var name = document.getElementsByName('name')[0].value;
-        var email = document.getElementsByName('email')[0].value;
-        var message = document.getElementsByName('message')[0].value;
-        var email = document.getElementsByName('number')[0].value;
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var number = document.getElementById('number').value;
+        var message = document.getElementById('message').value;
         var obj = {
             name: name,
             email: email,
+            number: number,
             message: message
         };
-        emailjs.init('2nrp4__jZ7w9SImHb'); // VERY IMPORTANT!
         
-        emailjs.send('service_13vt4fc', 'template_lsd5xtt', obj)
+        
+        emailjs.send('service_13vt4fc','template_lsd5xtt', obj)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             alert("Your message has been sent successfully!");
@@ -155,8 +388,7 @@
         <li><a href="/index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="/product.html">Products</a></li>
-        <li><a href="/vending.html">Vending Machine</a></li>
-          <li><a href="#">Contact</a></li>
+        <li><a href="index 2.html">Contact</a></li>
       </ul>
     </div>
 
@@ -353,6 +585,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 </footer>
-<script src="contact.js"></script>
+
+<!-- <script src="contact.js"></script> -->
 </body>
 </html>
