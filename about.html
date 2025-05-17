@@ -10,29 +10,250 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="images/logo wake oye .png" alt="Wake Oye Logo" />
+<header>
+  <div class="header-container">
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <img src="images/logo wake oye .png" alt="Wake Oye Logo" />
+    </a>
+    <div class="nav">
+      <!-- Desktop Nav -->
+      <ul class="navlist desktop-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="vending.html">Vending Machine</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+    <!-- Social Icons -->
+    <div class="social-icons desktop-nav">
+      <a href="https://www.facebook.com/profile.php?id=61557693606914"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/+923002850837"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Mobile Full-Screen Overlay Menu -->
+   <div class="nav">
+     <div class="nav-overlay" id="navOverlay">
+       <ul class="navlist">
+         <li><a href="index.html">Home</a></li>
+         <br>
+         <li><a href="about.html">About</a></li>
+         <br>
+         <li><a href="product.html">Product</a></li>
+         <br>
+         <li><a href="vending.html">Vending Machine</a></li>
+         <br>
+         <li><a href="contact.html">Contact</a></li>
+         <br>
+        </ul>
+        
+        <div class="social-icons" style="display: flex;">
+          <a href="https://www.facebook.com/profile.php?id=61557693606914"><i class="fab fa-facebook-f"></i></a>
+          <br>
+          <a href="https://wa.me/+923002850837"><i class="fab fa-whatsapp"></i></a>
+        </div>
       </div>
-      <header>
-          <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="#">About</a>
-            <a href="product.html">Product</a>
-            <a href="vending.html">Vending Machine</a>
-            <a href="contact.html">Contact</a>
-          </div>
-      
-          <div class="icons">
-            <i class="fas fa-shopping-cart"></i>
-           <a href="https://wa.me/+923002850837">
-             <i class="fab fa-whatsapp"></i>
-            </a>
-            <i class="fab fa-facebook-f"></i>
-          </div>
-        </nav>
-      </nav>
+    </div>
+</header>
+
+
+<br><br><br>
+<!-- STYLES -->
+<style>
+/* Base Styles */
+/* Hamburger Icon (3 lines) */
+/* Header container */
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1001;
+}
+
+/* Logo */
+.logo img {
+  width: 150px;
+}
+
+/* Desktop nav */
+.desktop-nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* Nav items */
+.nav {
+  display: flex;
+  gap: 30px;
+}
+.nav li{
+  list-style: none;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  background: gold;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #ae8757;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Social icons */
+.social-icons a {
+  background: gold;
+  color: black;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+/* Cart count */
+.cart-icon {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.hamburger span {
+  height: 3px;
+  background: gold;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Transform to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Overlay nav (mobile) */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(0, 0, 0, 0.95);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.nav-overlay.show {
+  height: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navlist {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .social-icons {
+    margin-top: 30px;
+    gap: 25px;
+  }
+}
+
+
+</style>
+
+<!-- SCRIPT -->
+<script>
+
+function toggleMenu(btn) {
+    btn.classList.toggle("active");
+    document.getElementById("navOverlay").classList.toggle("show");
+  }
+
+
+</script>
   <main>
     <div class="about-section">
       <div class="about-content">
@@ -40,8 +261,9 @@
         <!-- Our Mission -->
         <div class="about-block">
           <div class="about-text">
-            <h2>Our Mission</h2>
-            <p>At Wake Oye, our mission is to revolutionize tea and coffee breaks by providing instant, delicious, and hygienic premix solutions through modern vending machines.
+            <h2 style="color: #f1c40f; font-size: 50px;">Our Mission</h2>
+            <br>
+            <p style="font-size: medium;">At Wake Oye, our mission is to revolutionize tea and coffee breaks by providing instant, delicious, and hygienic premix solutions through modern vending machines.
               We strive to bring ease, consistency, and great taste to workplaces, cafeterias, canteens, and public spaces— making every sip energizing and memorable.
               Our goal is to make quality tea and coffee accessible to everyone, anytime, anywhere.</p>
             <p></p>
@@ -53,8 +275,9 @@
         <!-- Our Vision -->
         <div class="about-block">
           <div class="about-text">
-            <h1>Our Vision</h1>
-            <p>Our Vision
+            <h2 style="color: #f1c40f; font-size: 50px;">Our Vision</h2>
+            <br>
+            <p style="font-size: medium;">Our Vision
               At Wake Oye, our vision is to become the leading name in instant tea and coffee solutions across Pakistan.
               We aim to make every workplace, café, and canteen a hub of refreshment and energy through innovative vending technology and premium blends.We envision a future where convenience, quality, and great taste are always within reach — revolutionizing the way people experience their tea and coffee breaks, one cup at a time.</p>
           </div>
@@ -65,8 +288,9 @@
       <!-- Our Clients -->
 <div class="about-block">
   <div class="about-text">
-    <h1>Our Clients</h1>
-    <p>We are proud to serve a growing network of businesses across Pakistan. 
+            <h2 style="color: #f1c40f; font-size: 50px;">Our Clients</h2>
+            <br>
+    <p style="font-size: medium;">We are proud to serve a growing network of businesses across Pakistan. 
       From corporate offices and educational institutions to cafés, canteens, and mini-marts — 
       our clients trust Wake Oye to deliver consistent, high-quality tea and coffee experiences.
       Their satisfaction drives our passion, and their trust fuels our mission. 
@@ -88,12 +312,14 @@
         <!-- Our Team -->
         <div class="about-block">
           <div class="about-text">
-            <h1>Our Team</h1>
-            <p>At Wake Oye, our team is built on the foundation of hard work, determination, and a relentless commitment to excellence.
+            <br><br>
+            <h2 style="color: #f1c40f; font-size: 50px; border: 100px 200px;">Our Team</h2>
+            <br>
+            <p style="font-size: medium;">At Wake Oye, our Team is built on the foundation of hard work, determination, and a relentless commitment to excellence.
               Each member plays a crucial role, working tirelessly behind the scenes to bring you the best in tea, coffee, and customer service. From developing innovative vending solutions to ensuring quality control and customer satisfaction, our team is dedicated to making every cup perfect.
               We believe that true success comes from consistent effort, and it's this hard work that drives us to continuously improve and exceed expectations.</p>
           </div>
-          <img src="images/our team.jpeg" alt="Our Team" class="about-img" onclick="fadeOut(this)" />
+          <img src="images/our staff maybe 2.jpg" alt="Our Team" class="about-img" onclick="fadeOut(this)" />
         </div>
       </div>
       <hr>
@@ -135,8 +361,7 @@
         <li><a href="/index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="/product.html">Products</a></li>
-        <li><a href="/vending.html">Vending Machine</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index 2.html">Contact</a></li>
       </ul>
     </div>
 
