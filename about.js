@@ -9,4 +9,3 @@ function revealContent(block) {
 function fadeOut(img) {
   img.classList.add('fade-out');
 }
-
