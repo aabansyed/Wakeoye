@@ -1,9 +1,26 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background-color: #000;
   color: #FFF;
+  position: relative;
+  min-height: 100vh;
 }
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(images/cup-2619216_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: -1;
+}
+
 
 .navbar {
   display: flex;
