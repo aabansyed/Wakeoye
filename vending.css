@@ -1,9 +1,24 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #000 url('https://img.freepik.com/free-photo/various-coffee-mugs-black-grunge-textured_53876-95386.jpg?t=st=1747231326~exp=1747234926~hmac=8fa44d2a688974bf4ab5873df33e5c4d390fee68fe57e5b61c896cf870d40796&w=826') no-repeat center center fixed;
+  font-family: 'Montserrat', sans-serif;
+  color: #FFF;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(images/cup-2619216_1920.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
-  color: gold;
+  background-position: center;
+  filter: blur(8px);
+  z-index: -1;
 }
 
 .meow1{
@@ -138,10 +153,10 @@ body {
 
 
 .navbar {
+  background: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, #0b0808, #0f0c29);
   padding: 15px 30px;
   font-family: 'Poppins', sans-serif;
   position: fixed;         
@@ -149,7 +164,6 @@ body {
   left: 0;
   width: 100%;            
   z-index: 9999;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-logo {
