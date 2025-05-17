@@ -5,29 +5,270 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Wake Oye Vending Machines</title>
   <link rel="shortcut icon" href="images/wake oye favicon.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="vending.css">
 </head>
 <body>
-  <header>
-  <nav class="navbar">
-    <div class="navbar-logo"><img src="images/logo wake oye .png" alt="" style="height: 70px;"></div>
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
-    <ul class="navbar-links">
+ <header>
+  <div class="header-container">
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <img src="images/logo wake oye .png" alt="Wake Oye Logo" />
+    </a>
+    <div class="nav">
+      <!-- Desktop Nav -->
+      <ul class="navlist desktop-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="product.html">Product</a></li>
       <li><a href="vending.html">Vending Machine</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-  </nav>
+  </div>
+
+    <!-- Social Icons -->
+    <div class="social-icons desktop-nav">
+      <a href="https://www.facebook.com/profile.php?id=61557693606914"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/+923002850837"><i class="fab fa-whatsapp"></i></a>
+      <a href="" class="icon-link cart-icon">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count">0</span> <!-- Add this inside cart link -->
+    </a>          
+    </div>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Mobile Full-Screen Overlay Menu -->
+   <div class="nav">
+     <div class="nav-overlay" id="navOverlay">
+       <ul class="navlist">
+         <li><a href="index.html">Home</a></li>
+         <br>
+         <li><a href="about.html">About</a></li>
+         <br>
+         <li><a href="product.html">Product</a></li>
+         <br>
+         <li><a href="vending.html">Vending Machine</a></li>
+         <br>
+         <li><a href="contact.html">Contact</a></li>
+         <br>
+        </ul>
+        
+        <div class="social-icons" style="display: flex;">
+          <a href="https://www.facebook.com/profile.php?id=61557693606914"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/+923002850837"><i class="fab fa-whatsapp"></i></a>
+          <a href="" class="icon-link cart-icon">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count">0</span> <!-- Add this inside cart link -->
+    </a>          
+        </div>
+      </div>
+    </div>
 </header>
-    
-  <section class="vending-section" style="background-image:url(download\ \(2\).jpg) ;background-size: cover; background-position: center; " >
-  <br><br><br>
-    <h1 style="font-display: fallback; font-weight: 900; font-size: xx-large;">Wake Oye Vending Machines</h1>
-    <div class="machines-grid">
-      <!-- Template Machine Card -->
+
+
+<br><br><br>
+<!-- STYLES -->
+<style>
+/* Base Styles */
+/* Hamburger Icon (3 lines) */
+/* Header container */
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1001;
+}
+
+/* Logo */
+.logo img {
+  width: 150px;
+}
+
+/* Desktop nav */
+.desktop-nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* Nav items */
+.nav {
+  display: flex;
+  gap: 30px;
+}
+.nav li{
+  list-style: none;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  background: gold;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #ae8757;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Social icons */
+.social-icons a {
+  background: gold;
+  color: black;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+/* Cart count */
+.cart-icon {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.hamburger span {
+  height: 3px;
+  background: gold;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Transform to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Overlay nav (mobile) */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(0, 0, 0, 0.95);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.nav-overlay.show {
+  height: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navlist {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .social-icons {
+    margin-top: 30px;
+    gap: 25px;
+  }
+}
+
+
+</style>
+
+<!-- SCRIPT -->
+<script>
+
+function toggleMenu(btn) {
+    btn.classList.toggle("active");
+    document.getElementById("navOverlay").classList.toggle("show");
+  }
+
+
+</script>
+<hr style="border: none; height: 2px; background-color: gold;">
+<header style="background:#111; padding:20px; text-align:center; border-bottom:1px solid gold;">
+  <h1 style="font-family:'Playfair Display',serif; font-size:2.5em; color:gold; margin:0;"> Vending Machines</h1>
+  <br>
+  <p style="color:#ccc; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: larger;"><i>Eco logical Friendly</i></b></p>
+</header>
+<br><br><br><br>
+<div class="machines-grid">
+  <!-- Template Machine Card -->
 
       <div class="machine-card" 
            data-title="Machine 1: Instant Tea Magic"
@@ -118,6 +359,7 @@
       </div>
     </div>
   </div>
+  <br><br><br><br><br><br>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <footer class="modern-footer">
   <div class="footer-wave"></div>
