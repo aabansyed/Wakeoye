@@ -96,6 +96,178 @@ transition: all .6s ease;
     font-weight: 500;
 transition: all .6s ease;
 }
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1001;
+}
+
+/* Logo */
+.logo img {
+  width: 150px;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navlist {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navlist a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navlist a::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  background: gold;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.navlist a:hover {
+  color: #ae8757;
+}
+
+.navlist a:hover::after {
+  width: 100%;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.social-icons a {
+  background: gold;
+  color: black;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+/* Cart Count */
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.hamburger span {
+  height: 3px;
+  background: gold;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Mobile Overlay Menu */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(0, 0, 0, 0.95);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.nav-overlay.show {
+  height: 100%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hamburger to X Animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-overlay .navlist {
+    flex-direction: row;
+    gap: 30px;
+    text-align: center;
+    margin-top: 190px;
+  }
+
+  .nav-overlay .social-icons {
+    margin-top: 30px;
+    gap: 25px;
+  }
+}
 .nav-btn:hover {
 transform: translateY(-5px);
 border: 2px solid var(--main-color);
@@ -1194,7 +1366,7 @@ margin: 0 auto;
 
 /* Responsive */
 @media (max-width: 768px) {
-  .navlist {
+  .navlist  {
     display: none;
   }
 
